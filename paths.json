@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/citigroup-global/:/",
-    "/content/citigroup-global/configuration:/.helix/config.json"
+    "/content/citigroup/:/",
+    "/content/citigroup/configuration:/.helix/config.json"
   ]
 }
