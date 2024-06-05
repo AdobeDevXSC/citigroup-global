@@ -1,45 +1,44 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
-export default async function decorate(block) {
-  const headers = new Headers({
-    'Content-Type': 'text/html',
-  });
+const aemInstance = 'https://author-p101152-e938206.adobeaemcloud.com';
 
+export default async function decorate(block) {
   const obj = {
     method: 'get',
-    headers: headers,
-    credentials: 'include'
+    headers: new Headers({
+      'Content-Type': 'text/html',
+    }),
+    credentials: 'include',
   };
-  let articles = await fetch('https://author-p101152-e938206.adobeaemcloud.com/graphql/execute.json/citigroup/articles', obj);
+
+  let articles = await fetch(`${aemInstance}/graphql/execute.json/citigroup/articles`, obj);
   articles = await articles.json();
-  console.log(articles.data.articlesList.items);
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
-    console.log(row);
+
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
       // console.log(div.textContent);
-      const article = articles.data.articlesList.items.reduce((accumulator, item) => { 
-        console.log(item._path);
-        console.log(div.textContent);
-        console.log(accumulator);
-        if(item._path === div.textContent) return item   
+      let article = articles.data.articlesList.items.filter((item) => { 
+        if (item._path === div.textContent) return item;
       });
-      console.log(article);
-      if(article) {
+      article = article[0];
+
+      if (article) {
         div.className = 'cards-card-image';
         div.removeChild(div.querySelector('p'));
-        const optimizedPic = createOptimizedPicture(`https://author-p101152-e938206.adobeaemcloud.com${article.banner._dynamicUrl}`);
+        const optimizedPic = createOptimizedPicture(aemInstance + article.banner['_dynamicUrl']);
         optimizedPic.querySelectorAll('source').forEach((s) => {
-          s.srcset = `https://author-p101152-e938206.adobeaemcloud.com${s.srcset}`
+          s.srcset = aemInstance + s.srcset;
         });
         const optImg = optimizedPic.querySelector('img');
         if(optImg) {
-          optImg.src = `https://author-p101152-e938206.adobeaemcloud.com${optImg.src}`
+          optImg.src = aemInstance + optImg.src;
         }
         console.log(optimizedPic);
         div.appendChild(optimizedPic);

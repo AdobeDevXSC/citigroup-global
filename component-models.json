@@ -140,8 +140,16 @@
         "valueType": "string",
         "options": [
           {
+            "name": "Citi Enhances the Citi Premier Card with New Benefits to Make Travel Adventures More Rewarding",
+            "value": "/content/dam/citigroup/articles/citi-enhances-the-citi-premier-card"
+          },
+          {
             "name": "Future of Healthcare",
             "value": "/content/dam/citigroup/articles/future-of-healthcare"
+          },
+          {
+            "name": "Strained U.S. China Relations: The Ripple Effect",
+            "value": "/content/dam/citigroup/articles/strained-u-s-china-relations-the-ripple-effect"
           }
         ]
       }
