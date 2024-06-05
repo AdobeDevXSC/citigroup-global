@@ -184,10 +184,10 @@
         "valueType": "string"
       },
       {
-        "component": "button",
+        "component": "text",
         "valueType": "string",
-        "name": "button",
-        "label": "Button",
+        "name": "buttonName",
+        "label": "Button Name",
         "value": ""
       },
       {
