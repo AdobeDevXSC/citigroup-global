@@ -136,7 +136,7 @@
         "component": "select",
         "name": "type",
         "value": "",
-        "label": "Type",
+        "label": "Article",
         "valueType": "string",
         "options": [
           {

@@ -92,7 +92,7 @@
           }
         },
         {
-          "title": "Hero",
+          "title": "Teaser",
           "id": "hero",
           "plugins": {
             "xwalk": {
