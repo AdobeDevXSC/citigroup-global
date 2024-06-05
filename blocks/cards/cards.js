@@ -23,48 +23,52 @@ export default async function decorate(block) {
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      // console.log(div.textContent);
-      let article = articles.data.articlesList.items.filter((item) => { 
-        if (item._path === div.textContent) return item;
+      let article = articles.data.articlesList.items.filter((item) => {
+        if (item.path === div.textContent) return item;
+        else return;
       });
       article = article[0];
 
       if (article) {
+        const {
+          banner,
+          title,
+          categories,
+          date,
+        } = article;
         div.className = 'cards-card-image';
         div.removeChild(div.querySelector('p'));
-        const optimizedPic = createOptimizedPicture(aemInstance + article.banner['_dynamicUrl']);
+        const optimizedPic = createOptimizedPicture(aemInstance + banner.dynamicUrl);
         optimizedPic.querySelectorAll('source').forEach((s) => {
           s.srcset = aemInstance + s.srcset;
         });
         const optImg = optimizedPic.querySelector('img');
-        if(optImg) {
+        if (optImg) {
           optImg.src = aemInstance + optImg.src;
         }
-        console.log(optimizedPic);
+
         div.appendChild(optimizedPic);
+
         const body = document.createElement('div');
         body.classList.add('cards-card-body');
-        const title = document.createElement('h3');
-        title.textContent = article.title;
+
+        const h3 = document.createElement('h3');
+        h3.textContent = title;
+
         const subtitle = document.createElement('p');
-        subtitle.textContent = article.subTitle;
+        subtitle.textContent = categories;
+
         const pubDate = document.createElement('p');
-        pubDate.textContent = article.date;
+        pubDate.textContent = date;
+
         body.appendChild(subtitle);
-        body.appendChild(title);
+        body.appendChild(h3);
 
         li.appendChild(body);
       }
-      // if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      // else div.className = 'cards-card-body';
     });
     ul.append(li);
   });
-  // ul.querySelectorAll('picture > img').forEach((img) => {
-  //   const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-  //   moveInstrumentation(img, optimizedPic.querySelector('img'));
-  //   img.closest('picture').replaceWith(optimizedPic);
-  // });
   block.textContent = '';
   block.append(ul);
 }
