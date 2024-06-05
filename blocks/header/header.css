@@ -2,8 +2,9 @@
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
+  box-shadow: 0 5px 12px 1px rgba(0, 65, 165, 0.2);
 }
 
 header nav {
@@ -15,7 +16,7 @@ header nav {
   align-items: center;
   gap: 0 2em;
   margin: auto;
-  max-width: var(--nav-max-width);
+  max-width: 1200px;
   height: var(--nav-height);
   padding: 0 1rem;
   font-family: var(--body-font-family);
@@ -51,6 +52,7 @@ header nav[aria-expanded="true"] {
 header nav p {
   margin: 0;
   line-height: 1.4;
+  font-size: 14px;
 }
 
 header nav p:has(picture) {
@@ -60,6 +62,11 @@ header nav p:has(picture) {
 header nav a:any-link {
   color: currentcolor;
   line-height: 22px;
+  font-size: 20px;
+}
+
+header nav a:any-link:hover {
+  text-decoration: none;
 }
 
 header nav .nav-drop a:any-link {
@@ -162,7 +169,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 64px;
   height: auto;
 }
 
@@ -232,8 +239,8 @@ header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
     content: '';
     display: inline-block;
     position: absolute;
-    top: .2em;
-    right: 2px;
+    top: 12px;
+    right: 0;
     transform: rotate(135deg);
     width: 6px;
     height: 6px;
@@ -251,10 +258,10 @@ header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
   header nav .nav-sections ul {
     display: flex;
     gap: 2em;
-    margin: 0;
     position: relative;
-    justify-content: end;
+    justify-content: center;
     line-height: 18px;
+    margin-bottom: 0;
   }
 
   header nav .nav-sections > ul > li {
@@ -271,11 +278,14 @@ header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
     display: flex;
     flex-direction: row;
     position: fixed;
-    width: 100%;
-    left: 0;
-    margin-top: 26px;
-    background-color: var(--accent-background-color);
+    width: auto;
+    left: 2%;
+    margin-top: 18px;
+    background-color: #fff;
     white-space: initial;
+    box-shadow: 0 5px 12px 1px rgba(0, 65, 165, 0.2);
+    border-radius: 15px;
+    gap: 0;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
@@ -285,29 +295,27 @@ header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
     margin: 0;
   }
 
-  header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span {
-    margin: 10px 0;
-  }
-
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span > div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span > div > div {
     max-width: 470px;
-    padding: 26px
+    padding: 26px;
+    background-color: #F0F5F7;
+    border-radius: 15px 0 0 0;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span img {
-    width: auto;
+    width: -webkit-fill-available;
     max-height: 343px;
+    border-radius: 0 0 0 15px;
   }
 
   header nav span.right-span {
     width: 35%;
-    padding: 60px;
-    border-left: 0.8px solid black;
+    padding: 26px;
   }
 
   header nav .nav-sections > ul > li > ul > li {
@@ -318,15 +326,38 @@ header nav .nav-sections > ul > li[aria-expanded="true"] > ul > span.left-span {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  header nav .nav-tools {
+    margin-top: 1em;
+  }
+}
+
+header nav .nav-tools p:first-of-type {
+  padding-top: 5px;
+  padding-right: 0.5em;
+}
+
+header nav .nav-tools p:last-of-type {
+  border-left: 1px solid #ccc;
+  padding-left: 0.5em;
+}
+
+header nav .nav-tools p {
+  font-size: 16px;
 }
 
 header nav .nav-tools img {
   width: auto;
-  height: 56px;
+  height: 20px;
 }
 
 header nav h2 {
   font-size: var(--heading-font-size-l);
   line-height: 40px;
   font-weight: 500;
+  margin-top: 0;
 }
