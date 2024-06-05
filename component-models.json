@@ -184,10 +184,10 @@
         "valueType": "string"
       },
       {
-        "component": "text",
+        "component": "button",
         "valueType": "string",
-        "name": "buttonText",
-        "label": "Button Text",
+        "name": "button",
+        "label": "Button",
         "value": ""
       },
       {
@@ -196,6 +196,23 @@
         "name": "buttonLink",
         "label": "Button Link",
         "value": ""
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Hero",
+            "value": "hero"
+          },
+          {
+            "name": "Featured",
+            "value": "featured"
+          }
+        ]
       }
     ]
   }

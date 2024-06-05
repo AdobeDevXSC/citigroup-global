@@ -92,14 +92,14 @@
           }
         },
         {
-          "title": "Teaser",
+          "title": "Hero",
           "id": "hero",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Teaser",
+                  "name": "Hero",
                   "model": "hero"
                 }
               }
