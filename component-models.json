@@ -140,16 +140,28 @@
         "valueType": "string",
         "options": [
           {
-            "name": "Citi Enhances the Citi Premier Card with New Benefits to Make Travel Adventures More Rewarding",
-            "value": "/content/dam/citigroup/articles/citi-enhances-the-citi-premier-card"
+            "value": "/content/dam/citigroup/around-the-world",
+            "name": "Around the World with Citi: Washington D.C."
           },
           {
-            "name": "Future of Healthcare",
-            "value": "/content/dam/citigroup/articles/future-of-healthcare"
+            "value": "/content/dam/citigroup/articles/citi-enhances-the-citi-premier-card",
+            "name": "Citi Enhances the Citi Premier Card with New Benefits to Make Travel Adventures More Rewarding"
           },
           {
-            "name": "Strained U.S. China Relations: The Ripple Effect",
-            "value": "/content/dam/citigroup/articles/strained-u-s-china-relations-the-ripple-effect"
+            "value": "/content/dam/citigroup/articles/future-of-healthcare",
+            "name": "Future of Healthcare"
+          },
+          {
+            "value": "/content/dam/citigroup/articles/strained-u-s-china-relations-the-ripple-effect",
+            "name": "Strained U.S. China Relations: The Ripple Effect"
+          },
+          {
+            "value": "/content/dam/citigroup/joining-forces-to-fight-world-hunger",
+            "name": "Joining Forces to Fight World Hunger"
+          },
+          {
+            "value": "/content/dam/citigroup/technology-innovation",
+            "name": "Skills for Thriving Amid AI"
           }
         ]
       }
