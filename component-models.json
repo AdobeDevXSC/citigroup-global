@@ -133,18 +133,17 @@
     "id": "card",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
+        "component": "select",
+        "name": "type",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Future of Healthcare",
+            "value": "/insights/future-of-healthcare.html"
+          }
+        ]
       }
     ]
   },
