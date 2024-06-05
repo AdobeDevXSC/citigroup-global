@@ -39,7 +39,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 90px;
 }
 
 @font-face {
@@ -224,4 +224,18 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--background-color);
+}
+
+/* custom section styling */
+@media (width >= 900px) {
+  main .section.hero-container:first-of-type {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 1;
+  }
+  
+  main .section {
+    position: relative;
+    z-index: 2;
+  }  
 }
