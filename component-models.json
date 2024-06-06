@@ -226,7 +226,7 @@
         "options": [
           {
             "name": "Hero",
-            "value": "hero"
+            "value": "hero-banner"
           },
           {
             "name": "Featured",

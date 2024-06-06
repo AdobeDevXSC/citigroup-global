@@ -147,8 +147,8 @@ export default async function decorate(block) {
           const key = navSection.querySelector('p').textContent.toLowerCase().replace(' ', '-');
           const leftSpan = document.createElement('span');
           leftSpan.classList.add('left-span');
-          console.log(panels);
-          console.log(key);
+          // console.log(panels);
+          // console.log(key);
           leftSpan.append(panels[key]);
           const rightSpan = document.createElement('span');
           rightSpan.classList.add('right-span');
