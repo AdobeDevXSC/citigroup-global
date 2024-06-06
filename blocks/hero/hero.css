@@ -7,28 +7,174 @@ main .hero-container {
 }
 
 .hero {
-  position: relative;
-  padding: 32px;
-  min-height: 300px;
+  display: flex;
 }
 
-.hero h1 {
+.hero.hero-banner {
+  flex-direction: row-reverse;
+  padding: 45px 0 0 32px;
+}
+
+.hero.hero-banner img {
+  max-width: 948px;
+  min-height: 638px;
+  margin-bottom: -10px;
+  border-radius: 20px 20px 0 0;
+}
+
+.hero.hero-banner p {
+  font-size: 44px;
+  line-height: 60px;
+  font-weight: 400;
+  margin: 0;
+  padding-left: 30%;
+  padding-right: 10%;
+}
+
+.hero.hero-banner .image-container {
+  width: 47%;
+}
+
+.hero.hero-banner .desc-info-wrapper {
+  width: 53%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero.hero-banner .button-container a {
+  background-color: #255be3;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0.75rem;
+  line-height: normal;
+}
+
+.hero.hero-banner .button-container a:hover {
+  background-color: #005aa1;
+}
+
+.hero.featured {
+  padding: 8rem 2rem;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
+.hero.featured .image-container {
+  width: 50%;
+}
+
+.hero.featured .image-container > div {
+  height: 100%;
+}
+
+.hero.featured .desc-info-wrapper {
+  width: 50%;
+  background-color: #255be3;
+  color: #fff;
+  border-radius: 0 15px 15px 0;
+  padding: 40px 90px 40px 75px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero.featured .desc-info-wrapper p {
+  margin: 0;
+  font-size: 32px;
+  line-height: normal;
+}
+
+.hero.featured .button-container a {
+  font-size: 16px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.75rem;
+  line-height: normal;
+  font-weight: 400;
+  background-color: transparent;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+
+.hero.featured .button-container a:hover {
+  background-color: #000;
+}
+
+.hero.featured img {
+  border-radius: 15px 0 0 15px;
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.section.hero-container:nth-of-type(2) {
+  background: rgb(15, 22, 50);
+}
+
+
+@media (width <= 900px) {
+  .hero.hero-banner {
+    flex-direction: column;
+    padding-left: 7.5%;
+    padding-top: 0;
+  }
+
+  .hero.hero-banner .image-container {
+    width: 100%;
+  }
+  
+  .hero.hero-banner .desc-info-wrapper {
+    width: 100%;
+  }
+
+  .hero.hero-banner img {
+    min-height: unset;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .hero.hero-banner p {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 28px;
+    line-height: normal;
+  }
+
+  .hero.hero-banner p:not(.button-container) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero.featured {
+    flex-direction: column;
+    padding: 4rem 2rem;
+  }
+
+  .hero.featured .image-container {
+    width: 100%;
+    margin-bottom: -10px;
+  }
+
+  .hero.featured img {
+    border-radius: 20px 20px 0 0;
+    max-height: 239px;
+  }
+
+  .hero.featured .desc-info-wrapper {
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    padding: 2rem;
+  }
+
+  .hero.featured .desc-info-wrapper p {
+    font-size: 22px;
+  }
 }
