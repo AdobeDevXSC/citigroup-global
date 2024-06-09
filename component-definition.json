@@ -115,7 +115,7 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Accordion",
-                  "model": "accordion"
+                  "filter": "accordion"
                 }
               }
             }
