@@ -54,14 +54,15 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export function createHTML(articles) {
   const updatedArticles = [];
   const aemInstance = 'https://author-p101152-e938206.adobeaemcloud.com';
+  const { origin } = window.location;
 
   articles.forEach((article) => {
     const optimizedPic = createOptimizedPicture(aemInstance + article.banner.dynamicUrl, article.title, true);
     optimizedPic.querySelectorAll('source').forEach((s) => {
-      s.srcset = aemInstance + s.srcset;
+      s.srcset = aemInstance === origin ? s.srcset : aemInstance + s.srcset;
     });
     const img = optimizedPic.querySelector('img');
-    img.src = aemInstance + article.banner.dynamicUrl;
+    img.src = aemInstance === origin ? article.banner.dynamicUrl : aemInstance + article.banner.dynamicUrl;
 
     console.log(optimizedPic);
 
