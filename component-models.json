@@ -140,11 +140,25 @@
         "valueType": "string"
       },
       {
-        "component": "richtext",
-        "name": "accordianBody",
-        "value": "",
-        "label": "Item Body",
-        "valueType": "string"
+        "component": "reference",
+        "valueType": "string",
+        "name": "pressRelease",
+        "label": "Press Release",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "financialSupplement",
+        "label": "Financial Supplement",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "presentation",
+        "label": "Presentation",
+        "multi": false
       }
     ]
   },
