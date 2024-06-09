@@ -138,13 +138,6 @@
         "value": "",
         "label": "Item Label",
         "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "accordianBody",
-        "value": "",
-        "label": "Item Body",
-        "valueType": "string"
       }
     ]
   },
