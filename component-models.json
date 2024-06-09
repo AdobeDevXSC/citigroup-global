@@ -133,13 +133,6 @@
     "id": "accordion-item",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "accordionTitle",
-        "label": "Item Title",
-        "value": ""
-      },
-      {
         "component": "richtext",
         "name": "accordianBody",
         "value": "",
