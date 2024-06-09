@@ -142,7 +142,7 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "press-release",
+        "name": "pressRelease",
         "label": "Press Release",
         "multi": false
       }
