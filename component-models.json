@@ -138,7 +138,14 @@
         "value": "",
         "label": "Item Body",
         "valueType": "string"
-      }
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "press-release",
+        "label": "Press Release",
+        "multi": false
+      },
     ]
   },
   {
