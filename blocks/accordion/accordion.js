@@ -48,9 +48,9 @@ export default function decorate(block) {
     // body.appendChild(list);
 
     // decorate accordion item
-    // const details = document.createElement('details');
-    // details.className = 'accordion-item';
-    // details.append(summary, body);
-    // row.replaceWith(details);
+    const details = document.createElement('details');
+    details.className = 'accordion-item';
+    details.append(summary, body);
+    row.replaceWith(details);
   });
 }
