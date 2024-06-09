@@ -45,7 +45,7 @@ export default function decorate(block) {
       list.appendChild(li);
     });
 
-    body.appendChild(list);
+    // body.appendChild(list);
 
     // decorate accordion item
     // const details = document.createElement('details');
