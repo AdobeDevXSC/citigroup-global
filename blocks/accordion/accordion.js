@@ -10,6 +10,7 @@ function hasWrapper(el) {
 
 export default function decorate(block) {
   [...block.children].forEach((row) => {
+    console.log(row);
     // decorate accordion item label
     const label = row.children[0];
     const summary = document.createElement('summary');
