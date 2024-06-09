@@ -61,7 +61,7 @@ export function createHTML(articles) {
       s.srcset = aemInstance + s.srcset;
     });
     const img = optimizedPic.querySelector('img');
-    img.src = aemInstance + img.src;
+    img.src = aemInstance + article.banner.dynamicUrl;
 
     console.log(optimizedPic);
 
