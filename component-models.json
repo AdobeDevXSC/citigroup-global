@@ -233,7 +233,19 @@
             "value": "featured"
           }
         ]
-      }
+      },
+      {
+        "id": "aem-content-picker",
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "reference",
+            "value": "",
+            "label": "Link",
+            "valueType": "string"
+          }
+        ]
+      }      
     ]
   }
 ]
