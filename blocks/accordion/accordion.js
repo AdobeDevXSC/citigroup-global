@@ -12,8 +12,7 @@ export default function decorate(block) {
   console.log(block);
   const hrefs = block.querySelectorAll('a');
   const lbls = ['Press Release', 'Financial Supplement', 'Presentation'];
-  return;
-  
+
   [...block.children].forEach((row) => {
     const label = row.children[0];
     const summary = document.createElement('summary');
