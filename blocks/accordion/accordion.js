@@ -9,11 +9,10 @@ function hasWrapper(el) {
 }
 
 export default function decorate(block) {
-  console.log(block);
-  const hrefs = block.querySelectorAll('a');
   const lbls = ['Press Release', 'Financial Supplement', 'Presentation'];
 
   [...block.children].forEach((row) => {
+    const hrefs = row.querySelectorAll('a');
     const label = row.children[0];
     const summary = document.createElement('summary');
     summary.className = 'accordion-item-label';
