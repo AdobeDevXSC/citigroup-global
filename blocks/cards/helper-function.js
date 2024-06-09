@@ -57,9 +57,11 @@ export function createHTML(articles) {
 
   articles.forEach((article) => {
     const optimizedPic = createOptimizedPicture(aemInstance + article.banner.dynamicUrl, article.title, true);
-      optimizedPic.querySelectorAll('source').forEach((s) => {
-        s.srcset = aemInstance + s.srcset;
+    optimizedPic.querySelectorAll('source').forEach((s) => {
+      s.srcset = aemInstance + s.srcset;
     });
+    const img = optimizedPic.querySelector('img');
+    img.src = aemInstance + img.src;
 
     console.log(optimizedPic);
 
