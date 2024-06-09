@@ -135,16 +135,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "itemTitle",
-        "label": "Title",
-        "value": ""
+        "name": "itemLabel",
+        "label": "Label",
+        "value": "Item Title"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "itemSubTitle",
-        "label": "Sub-Title",
-        "value": ""
+        "name": "itemBody",
+        "label": "Body",
+        "value": "Item Sub-Title"
       }
     ]
   },
