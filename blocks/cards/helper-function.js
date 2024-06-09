@@ -53,22 +53,35 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export function createHTML(articles) {
   const updatedArticles = [];
-  const aemInstance = 'https://author-p101152-e938206.adobeaemcloud.com';
+  
   const { origin } = window.location;
 
   articles.forEach((article) => {
-    const optimizedPic = createOptimizedPicture(aemInstance + article.banner.dynamicUrl, article.title, true);
-    optimizedPic.querySelectorAll('source').forEach((s) => {
-      s.srcset = aemInstance === origin ? s.srcset : aemInstance + s.srcset;
-    });
-    const img = optimizedPic.querySelector('img');
-    img.src = aemInstance === origin ? article.banner.dynamicUrl : aemInstance + article.banner.dynamicUrl;
+    const aemInstance = 'https://author-p101152-e938206.adobeaemcloud.com' + article.banner.dynamicUrl;
+    const optimizedPic = `<picture>
+      <img loading="lazy" 
+        src="${aemInstance}" 
+        width="1313" height="739" 
+        srcset="${aemInstance}?width=412 412w,
+        ${aemInstance}?width=600 600w,
+        ${aemInstance}?width=800 800w,
+        ${aemInstance}?width=1000 1000w,
+        ${aemInstance}?width=660 660w" 
+        sizes="(min-width: 1000px) 660px, 100vw">
+      </picture>`;
 
-    console.log(optimizedPic);
+    // const optimizedPic = createOptimizedPicture(aemInstance + article.banner.dynamicUrl, article.title, true);
+    // optimizedPic.querySelectorAll('source').forEach((s) => {
+    //   s.srcset = aemInstance === origin ? s.srcset : aemInstance + s.srcset;
+    // });
+    // const img = optimizedPic.querySelector('img');
+    // img.src = aemInstance === origin ? article.banner.dynamicUrl : aemInstance + article.banner.dynamicUrl;
+
+    // console.log(optimizedPic);
 
     updatedArticles.push(`
       <div class="article-container">
-        <div class="article-img-wrapper">${optimizedPic.outerHTML}</div>
+        <div class="article-img-wrapper">${optimizedPic}</div>
         <div class="article-info-wrapper">
           <div class="categories-text">${article.categories}</div>
           <h3>${article.title}</h3>
