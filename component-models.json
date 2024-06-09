@@ -145,27 +145,6 @@
         "name": "itemSubTitle",
         "label": "Sub-Title",
         "value": ""
-      },
-      {
-        "component": "reference",
-        "name": "prReference",
-        "value": "",
-        "label": "Press Release",
-        "valueType": "string"
-      }, 
-      {
-        "component": "reference",
-        "name": "fsReference",
-        "value": "",
-        "label": "Financial Supplement (pdf)",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "name": "presoReference",
-        "value": "",
-        "label": "Presentation",
-        "valueType": "string"
       }
     ]
   },
