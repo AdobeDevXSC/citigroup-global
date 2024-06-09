@@ -29,28 +29,28 @@ export default function decorate(block) {
     }
 
     const list = document.createElement('ul');
-    // hrefs.forEach((href, i) => {
-    //   const li = document.createElement('li');
-    //   const divLbl = document.createElement('div');
-    //   divLbl.classList.add('list-label');
-    //   divLbl.textContent = lbls[i];
-    //   li.appendChild(divLbl);
+    hrefs.forEach((href, i) => {
+      const li = document.createElement('li');
+      const divLbl = document.createElement('div');
+      divLbl.classList.add('list-label');
+      divLbl.textContent = lbls[i];
+      li.appendChild(divLbl);
 
-    //   const divLnk = document.createElement('divLnk');
-    //   divLnk.classList.add('link-link');
-    //   divLnk.appendChild(href);
-    //   href.className = 'document-link';
-    //   href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
-    //   li.appendChild(divLnk);
-    //   list.appendChild(li);
-    // });
+      const divLnk = document.createElement('divLnk');
+      divLnk.classList.add('link-link');
+      divLnk.appendChild(href);
+      href.className = 'document-link';
+      href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
+      li.appendChild(divLnk);
+      list.appendChild(li);
+    });
 
     body.appendChild(list);
 
     // decorate accordion item
-    const details = document.createElement('details');
-    details.className = 'accordion-item';
-    details.append(summary, body);
-    row.replaceWith(details);
+    // const details = document.createElement('details');
+    // details.className = 'accordion-item';
+    // details.append(summary, body);
+    // row.replaceWith(details);
   });
 }
