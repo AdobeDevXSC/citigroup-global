@@ -133,10 +133,38 @@
     "id": "accordion-item",
     "fields": [
       {
-        "component": "richtext",
-        "name": "accordianBody",
+        "component": "text",
+        "valueType": "string",
+        "name": "itemTitle",
+        "label": "Title",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "itemSubTitle",
+        "label": "Sub-Title",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "prReference",
         "value": "",
-        "label": "Item Body",
+        "label": "Press Release",
+        "valueType": "string"
+      }, 
+      {
+        "component": "reference",
+        "name": "fsReference",
+        "value": "",
+        "label": "Financial Supplement (pdf)",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "presoReference",
+        "value": "",
+        "label": "Presentation",
         "valueType": "string"
       }
     ]
