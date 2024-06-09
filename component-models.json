@@ -211,17 +211,10 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "buttonLink",
-        "label": "Button Link",
-        "value": ""
-      },
-      {
         "component": "aem-content",
         "name": "reference",
         "value": "",
-        "label": "Link",
+        "label": "Button Link",
         "valueType": "string"
       },      
       {
