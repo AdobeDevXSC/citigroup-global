@@ -145,6 +145,20 @@
         "name": "pressRelease",
         "label": "Press Release",
         "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "financialSupplement",
+        "label": "Financial Supplement",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "presentation",
+        "label": "Presentation",
+        "multi": false
       }
     ]
   },
