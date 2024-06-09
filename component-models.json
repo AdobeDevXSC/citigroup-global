@@ -140,6 +140,13 @@
         "valueType": "string"
       },
       {
+        "component": "richtext",
+        "name": "accordianBody",
+        "value": "",
+        "label": "Item Body",
+        "valueType": "string"
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "pressRelease",
