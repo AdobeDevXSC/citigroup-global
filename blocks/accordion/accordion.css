@@ -55,3 +55,22 @@
   border-top: 1px solid var(--dark-color);
   background-color: var(--background-color);
 }
+
+.accordion h3 {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Citi-Sans-Text-Bold;
+}
+
+.accordion .accordion-item-body ul {
+  list-style: none;
+}
+
+.accordion .accordion-item-body ul > li {
+  display: flex;
+  flex-direction: row;
+}
+
+.accordion .accordion-item-body ul > li > div:first-child {
+  width: 253px;
+}

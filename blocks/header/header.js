@@ -90,7 +90,7 @@ async function fetchPanels() {
   const panelsObj = {};
   const navMeta = getMetadata('nav');
   const navPath = navMeta || '/nav';
-  const resp = await fetch(`fragments${navPath}-panels.plain.html`);
+  const resp = await fetch(`/fragments/nav-panels.plain.html`);
   // const resp = await loadFragment(`${navPath}-panels`);
   if (resp.ok) {
     const html = await resp.text();
@@ -121,7 +121,7 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta || '/nav';
 
-  const resp = await fetch(`fragments${navPath}.plain.html`);
+  const resp = await fetch(`/fragments/nav.plain.html`);
 
   if (resp.ok) {
     const html = await resp.text();
