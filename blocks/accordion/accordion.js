@@ -39,13 +39,13 @@ export default function decorate(block) {
       const divLnk = document.createElement('divLnk');
       divLnk.classList.add('link-link');
       divLnk.appendChild(href);
-      href.className = 'document-link';
+      href.className = 'document-link'
       href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
       li.appendChild(divLnk);
       list.appendChild(li);
     });
 
-    // body.appendChild(list);
+    body.appendChild(list);
 
     // decorate accordion item
     const details = document.createElement('details');

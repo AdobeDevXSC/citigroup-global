@@ -44,12 +44,17 @@
   padding: 0;
 }
 
+.accordion .accordion-item-label {
+  height: 72px;
+}
+
 .accordion .accordion-item-label h2 {
   margin: 0;
   font-family: Citi-Sans-Text;
   font-size: 28px;
   font-weight: 400;
   list-style: 36px;
+  /* height: 72px; */
   position: absolute;
   top:50%;
   transform: translateY(-50%);
