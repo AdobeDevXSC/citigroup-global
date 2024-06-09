@@ -65,7 +65,6 @@ export function createHTML(articles) {
         srcset="${aemInstance}?width=412 412w,
         ${aemInstance}?width=600 600w,
         ${aemInstance}?width=800 800w,
-        ${aemInstance}?width=1000 1000w,
         ${aemInstance}?width=660 660w" 
         sizes="(min-width: 1000px) 660px, 100vw">
       </picture>`;
