@@ -71,7 +71,7 @@ function bindEvents(block) {
       }
     });
   }, { threshold: 0.5 }); // Adjust threshold as needed
-  
+
   block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
@@ -158,7 +158,8 @@ export default async function decorate(block) {
   const slidesWrapper = document.createElement('ul');
   slidesWrapper.classList.add('carousel-slides');
   container.append(slidesWrapper);
-
+  return;
+  
   let slideIndicators;
   if (!isSingleSlide) {
     const slideIndicatorsNav = document.createElement('nav');
