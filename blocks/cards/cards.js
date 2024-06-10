@@ -8,7 +8,7 @@ export default async function decorate(block) {
     if(!article) throw Error('There is no article');
     const articleUrl = article.title.replace('/content/citigroup', '');
     const category = [...row.children][1];
-    const resp = await fetch(articleUrl);
+    const resp = await fetch(`${articleUrl}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
@@ -31,3 +31,6 @@ export default async function decorate(block) {
     article.remove();
   }); 
 }
+
+//https://author-p101152-e938206.adobeaemcloud.com/content/citigroup/index/press-release/2024/citi-wealth-releases-mid-year-outlook-2024/
+//https://author-p101152-e938206.adobeaemcloud.com/content/citigroup/index/press-release/2024/citi-wealth-releases-mid-year-outlook-2024.html
