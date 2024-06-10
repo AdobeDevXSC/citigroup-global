@@ -183,14 +183,14 @@ export default async function decorate(block) {
 
   block.setAttribute('role', 'region');
   block.setAttribute('aria-roledescription', placeholders.carousel || 'Carousel');
-  return;
+
   const container = document.createElement('div');
   container.classList.add('carousel-slides-container');
 
   const slidesWrapper = document.createElement('ul');
   slidesWrapper.classList.add('carousel-slides');
   container.append(slidesWrapper);
-
+  return;
   let slideIndicators;
   if (!isSingleSlide) {
     const slideIndicatorsNav = document.createElement('nav');
