@@ -157,13 +157,13 @@ export default async function decorate(block) {
         const articleContainer = document.createElement('div');
         articleContainer.classList.add('article-container');
         articleContainer.innerHTML = 
-        articleContainer.innerHTML = `<h3>${a.title} v3</h3>`;
-          // <div class="article-img-wrapper">${oPic}</div>
-          // <div class="article-info-wrapper">
-          //   <div class="categories-text">${a.categories}</div>
-          //   <h3>${a.title}</h3>
-          //   <div class="article-date">${a.date}</div>
-          // </div>`;
+        articleContainer.innerHTML = `
+          <div class="article-img-wrapper">${oPic}</div>
+          <div class="article-info-wrapper">
+            <div class="categories-text">${a.categories}</div>
+            <h3>${a.title}</h3>
+            <div class="article-date">${a.date}</div>
+          </div>`;
         row.append(articleContainer);
       }
     });
@@ -221,6 +221,7 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
       slideIndicators.append(indicator);
     }
+    console.log(row);
     // row.remove();
   });
 
