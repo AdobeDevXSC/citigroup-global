@@ -170,7 +170,7 @@ export default async function decorate(block) {
     // row.append(article.title);
   });
 
-
+  return;
   // const html = createHTML(items);
   // block.innerHTML = `${html.join('')}`;
 
