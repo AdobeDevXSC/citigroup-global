@@ -53,7 +53,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export function createHTML(articles) {
   const updatedArticles = [];
-  
+  return;
   const { origin } = window.location;
 
   articles.forEach((article) => {
