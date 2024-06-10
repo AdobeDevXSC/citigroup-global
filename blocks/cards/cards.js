@@ -139,8 +139,40 @@ export default async function decorate(block) {
   let articles = await fetch(`${aemInstance}/graphql/execute.json/citigroup/articles`, obj);
   articles = await articles.json();
   const items = articles?.data?.articlesList?.items;
-  const html = createHTML(items);
-  block.innerHTML = `${html.join('')}`;
+  [...block.children].forEach((row, i) => {
+    const href = row.querySelector('a');
+    items.forEach((a) => {
+      if(href.title === a.path) {
+        const oPic = `<picture>
+        <img loading="lazy" 
+          src="${aemInstance + a.banner.dynamicUrl}" 
+          width="1313" height="739" 
+          srcset="${aemInstance + a.banner.dynamicUrl}?width=412 412w,
+          ${aemInstance + a.banner.dynamicUrl}?width=600 600w,
+          ${aemInstance + a.banner.dynamicUrl}?width=800 800w,
+          ${aemInstance + a.banner.dynamicUrl}?width=660 660w" 
+          sizes="(min-width: 1000px) 660px, 100vw">
+        </picture>`;
+
+        const articleContainer = document.createElement('div');
+        articleContainer.classList.add('article-container');
+        articleContainer.innerHTML = `
+          <div class="article-img-wrapper">${oPic}</div>
+          <div class="article-info-wrapper">
+            <div class="categories-text">${a.categories}</div>
+            <h3>${a.title}</h3>
+            <div class="article-date">${a.date}</div>
+          </div>`;
+        row.append(articleContainer);
+      }
+    });
+    
+    // row.append(article.title);
+  });
+
+
+  // const html = createHTML(items);
+  // block.innerHTML = `${html.join('')}`;
 
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
