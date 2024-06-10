@@ -156,13 +156,14 @@ export default async function decorate(block) {
 
         const articleContainer = document.createElement('div');
         articleContainer.classList.add('article-container');
-        articleContainer.innerHTML = `
-          <div class="article-img-wrapper">${oPic}</div>
-          <div class="article-info-wrapper">
-            <div class="categories-text">${a.categories}</div>
-            <h3>${a.title}</h3>
-            <div class="article-date">${a.date}</div>
-          </div>`;
+        articleContainer.innerHTML = 
+        articleContainer.innerHTML = `<h3>${a.title}</h3>`;
+          // <div class="article-img-wrapper">${oPic}</div>
+          // <div class="article-info-wrapper">
+          //   <div class="categories-text">${a.categories}</div>
+          //   <h3>${a.title}</h3>
+          //   <div class="article-date">${a.date}</div>
+          // </div>`;
         row.append(articleContainer);
       }
     });
