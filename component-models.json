@@ -173,35 +173,34 @@
     "id": "card",
     "fields": [
       {
+        "component": "aem-content",
+        "name": "reference",
+        "value": "",
+        "label": "Article",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "type",
         "value": "",
-        "label": "Article",
+        "label": "Category",
         "valueType": "string",
         "options": [
           {
-            "value": "/content/dam/citigroup/around-the-world",
-            "name": "Around the World with Citi: Washington D.C."
+            "value": "press release",
+            "name": "Press Release"
           },
           {
-            "value": "/content/dam/citigroup/articles/citi-enhances-the-citi-premier-card",
-            "name": "Citi Enhances the Citi Premier Card with New Benefits to Make Travel Adventures More Rewarding"
+            "value": "health & wellness",
+            "name": "Health & Wellness"
           },
           {
-            "value": "/content/dam/citigroup/articles/future-of-healthcare",
-            "name": "Future of Healthcare"
+            "value": "technology & innovation",
+            "name": "Technology & Innovation"
           },
           {
-            "value": "/content/dam/citigroup/articles/strained-u-s-china-relations-the-ripple-effect",
-            "name": "Strained U.S. China Relations: The Ripple Effect"
-          },
-          {
-            "value": "/content/dam/citigroup/joining-forces-to-fight-world-hunger",
-            "name": "Joining Forces to Fight World Hunger"
-          },
-          {
-            "value": "/content/dam/citigroup/technology-innovation",
-            "name": "Skills for Thriving Amid AI"
+            "value": "perspectives",
+            "name": "Perspectives"
           }
         ]
       }
