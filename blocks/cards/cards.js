@@ -166,11 +166,10 @@ export default async function decorate(block) {
         row.append(articleContainer);
       }
     });
-    
+    href.remove();
     // row.append(article.title);
   });
 
-  return;
   // const html = createHTML(items);
   // block.innerHTML = `${html.join('')}`;
 
@@ -183,7 +182,7 @@ export default async function decorate(block) {
 
   block.setAttribute('role', 'region');
   block.setAttribute('aria-roledescription', placeholders.carousel || 'Carousel');
-
+  return;
   const container = document.createElement('div');
   container.classList.add('carousel-slides-container');
 
