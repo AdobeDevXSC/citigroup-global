@@ -1,6 +1,7 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 import { createHTML } from './helper-function.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function updateActiveSlide(block) {
   const slides = block.querySelectorAll('.carousel-slide');
@@ -83,6 +84,7 @@ function createSlide(row, slideIndex, carouselId) {
   slide.dataset.slideIndex = slideIndex;
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-slide');
+  moveInstrumentation(row, slide);
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
@@ -238,7 +240,6 @@ export default async function decorate(block) {
   wrapperDiv.append(slideNavButtonsDiv);
   navigationTitleDiv.append(wrapperDiv);
 
-  console.log(navigationTitleDiv);
 
   block.prepend(container);
   block.prepend(navigationTitleDiv);
