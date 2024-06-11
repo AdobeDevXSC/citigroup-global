@@ -148,8 +148,8 @@ export default async function decorate(block) {
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
-      const [date, pic] = document.querySelectorAll('p');
-
+      const [date, pic] = main.querySelectorAll('p');
+      console.log(date);
       const heroPic = main.querySelector('picture');
       link.innerHTML = heroPic.outerHTML;
 
@@ -237,6 +237,8 @@ export default async function decorate(block) {
 
   wrapperDiv.append(slideNavButtonsDiv);
   navigationTitleDiv.append(wrapperDiv);
+
+  console.log(navigationTitleDiv);
 
   block.prepend(container);
   block.prepend(navigationTitleDiv);
