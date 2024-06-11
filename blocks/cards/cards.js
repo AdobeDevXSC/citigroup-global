@@ -148,6 +148,7 @@ export default async function decorate(block) {
     
     const articleUrl = article.title.replace('/content/citigroup', '');
     const resp = await fetch(`${articleUrl}.plain.html`);
+
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();

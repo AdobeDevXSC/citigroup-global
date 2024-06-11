@@ -89,10 +89,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 async function fetchPanels() {
   const panelsObj = {};
   const navMeta = getMetadata('nav');
-  console.log(navMeta);
   const navPath = navMeta || '/nav';
-  const resp = await fetch(`/fragments/nav-panels.plain.html`);
-  // const resp = await loadFragment(`${navPath}-panels`);
+  // const resp = await fetch(`/fragments/nav-panels.plain.html`);
+  const resp = await loadFragment(`${navPath}-panels`);
   if (resp.ok) {
     const html = await resp.text();
     const div = document.createElement('div');

@@ -18,7 +18,7 @@ import {
  * @returns {HTMLElement} The root element of the fragment
  */
 export async function loadFragment(path) {
-  path = `/fragments${path}`;
+  // path = `/fragments${path}`;
   if (path && path.startsWith('/')) {
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
