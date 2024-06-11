@@ -2,6 +2,6 @@
   "mappings": [
     "/content/citigroup/:/",
     "/content/citigroup/configuration:/.helix/config.json",
-    "/content/citigroup/metadata.json:/metadata.json"
+    "/content/citigroup/metadata:/metadata.json"
   ]
 }
