@@ -2,6 +2,7 @@ import { fetchPlaceholders } from '../../scripts/aem.js';
 import { createHTML } from './helper-function.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
+import { getMetadata } from '../../scripts/aem.js';
 
 function updateActiveSlide(block) {
   const slides = block.querySelectorAll('.carousel-slide');
@@ -150,8 +151,13 @@ export default async function decorate(block) {
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
-      const date = main.querySelector('p:not(:has(img))')
-   
+      let date = getMetadata('published-time'); //main.querySelector('p:not(:has(img))');
+      if(date) date = new Date(date);
+      
+      const month = typeof date === 'object' ? date.toLocaleString('default', { month: 'long' }) : '';
+      const day = typeof date === 'object' ? date.getDate(): '';
+      const year = typeof date === 'object' ? date.getFullYear(): '';
+
       const heroPic = main.querySelector('picture');
       link.innerHTML = heroPic.outerHTML;
 
@@ -162,7 +168,7 @@ export default async function decorate(block) {
 
       const dateDiv = document.createElement('div');
       dateDiv.classList.add('article-date');
-      dateDiv.innerHTML = date.outerHTML;
+      dateDiv.innerHTML = `${month} ${day}, ${year}`; //date.outerHTML;
       category.appendChild(dateDiv);
     }
   }); 
