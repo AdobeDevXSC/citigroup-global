@@ -150,8 +150,8 @@ export default async function decorate(block) {
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
-      const [date, pic] = main.querySelectorAll('p');
-      console.log(date);
+      const date = main.querySelector('p:not(:has(img))')
+   
       const heroPic = main.querySelector('picture');
       link.innerHTML = heroPic.outerHTML;
 
@@ -164,20 +164,7 @@ export default async function decorate(block) {
       dateDiv.classList.add('article-date');
       dateDiv.innerHTML = date.outerHTML;
       category.appendChild(dateDiv);
-
-      // const articleContainer = document.createElement('div');
-      // articleContainer.classList.add('article-container');
-      // articleContainer.innerHTML = 
-      // articleContainer.innerHTML = `
-      //   <div class="article-img-wrapper">${heroPic.outerHTML}</div>
-      //   <div class="article-info-wrapper">
-      //     <div class="categories-text">${category.innerHTML}</div>
-      //     <h3>${h1.textContent}</h3>
-      //     <div class="article-date">${date.outerHTML}</div>
-      //   </div>`;
-      // row.appendChild(articleContainer);
     }
-    // article.remove();
   }); 
 
   carouselId += 1;
