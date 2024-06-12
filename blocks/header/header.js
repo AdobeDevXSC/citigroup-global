@@ -149,7 +149,7 @@ export default async function decorate(block) {
         if (navSection.querySelector('ul')) {
           navSection.classList.add('nav-drop');
           // const key = navSection.textContent.split('\n').shift().toLowerCase().replace(' ', '-');
-          let key = navSection.querySelector('p');
+          let key = navSection.querySelector('a');
           if(key) key = key.textContent.toLowerCase().replace(' ', '-');
           
           const leftSpan = document.createElement('span');
