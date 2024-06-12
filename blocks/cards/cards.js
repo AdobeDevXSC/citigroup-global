@@ -221,7 +221,6 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
       slideIndicators.append(indicator);
     }
-    console.log(row);
     // row.remove();
   });
 

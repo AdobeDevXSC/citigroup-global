@@ -38,8 +38,21 @@ export default function decorate(block) {
       const divLnk = document.createElement('divLnk');
       divLnk.classList.add('link-link');
       divLnk.appendChild(href);
-      href.className = 'document-link'
-      href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
+
+      const iconName = 'pdf';
+      const img = document.createElement('img');
+      img.dataset.iconName = iconName;
+      img.src = `${window.hlx.codeBasePath}/icons/${iconName}.svg`;
+      img.alt = 'pdf icon';
+      img.loading = 'lazy';
+
+      href.className = 'document-link';
+      const url = new URL(href.href);
+      const {pathname} = url;
+      href.href = `https://author-p48154-e244509.adobeaemcloud.com${pathname}`;
+      // href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
+      href.innerHTML = img.outerHTML;
+
       li.appendChild(divLnk);
       list.appendChild(li);
     });

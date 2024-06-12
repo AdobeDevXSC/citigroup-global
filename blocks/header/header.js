@@ -88,10 +88,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
 async function fetchPanels() {
   const panelsObj = {};
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta || '/nav';
-  // const resp = await fetch(`/fragments/nav-panels.plain.html`);
-  const resp = await loadFragment(`${navPath}-panels`);
+  const panelsMeta = getMetadata('nav-panels');
+  const panelsPath = panelsMeta || '/nav-panels';
+  const resp = await fetch(`${panelsPath}.plain.html`);
+
   if (resp.ok) {
     const html = await resp.text();
     const div = document.createElement('div');

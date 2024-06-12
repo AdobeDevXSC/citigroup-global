@@ -1,5 +1,4 @@
 export default async function decorate(block) {
-  console.log(block);
   //Modify section class
   const sectionClassDiv = block.children[4];
   const sectionClass = sectionClassDiv.querySelector('p').textContent;
