@@ -1,6 +1,7 @@
 {
   "mappings": [
     "/content/citigroup/:/",
+    "/content/citigroup/index/quarterly-earnings:/index/quarterly-earnings",
     "/content/citigroup/configuration:/.helix/config.json",
     "/content/citigroup/metadata:/metadata.json"
   ]
