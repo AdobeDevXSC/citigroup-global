@@ -49,7 +49,7 @@ export default function decorate(block) {
       href.className = 'document-link';
       const url = new URL(href.href);
       const {pathname} = url;
-      href.href = `https://author-p48154-e244509.adobeaemcloud.com${pathname}`;
+      href.href = `https://publish-p48154-e244509.adobeaemcloud.com${pathname}`;
       // href.innerHTML = `<img data-icon-name="logo" src="/icons/pdf.svg" alt="" loading="lazy">`;
       href.innerHTML = img.outerHTML;
 
