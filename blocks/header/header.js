@@ -96,19 +96,15 @@ async function fetchPanels() {
     const html = await resp.text();
     const div = document.createElement('div');
     div.innerHTML = html;
-    console.log('in panels');
     [...div.children].forEach((elem) => {
       const section = elem.querySelector('.section-metadata');
-      console.log(section);
       const key = section.querySelector('.section-metadata > div > div:last-child').textContent;
-      console.log(key);
       section.remove();
       const content = document.createElement('div');
       content.classList.add('panel-content');
       elem.querySelectorAll('div>:not(:first-child)').forEach((item) => {
         content.append(item);
       });
-      console.log(content);
       elem.append(content);
       panelsObj[key] = elem;
     });
@@ -154,8 +150,6 @@ export default async function decorate(block) {
           
           const leftSpan = document.createElement('span');
           leftSpan.classList.add('left-span');
-          console.log(panels);
-          console.log(key);
           leftSpan.append(panels[key]);
           const rightSpan = document.createElement('span');
           rightSpan.classList.add('right-span');
