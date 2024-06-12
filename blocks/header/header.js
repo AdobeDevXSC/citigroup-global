@@ -96,6 +96,7 @@ async function fetchPanels() {
     const html = await resp.text();
     const div = document.createElement('div');
     div.innerHTML = html;
+    console.log('in panels');
     [...div.children].forEach((elem) => {
       const section = elem.querySelector('.section-metadata');
       const key = section.querySelector('.section-metadata > div > div:last-child').textContent;
