@@ -142,6 +142,7 @@ export default async function decorate(block) {
     });
 
     const panels = await fetchPanels();
+    console.log(panels);
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
@@ -153,8 +154,8 @@ export default async function decorate(block) {
           
           const leftSpan = document.createElement('span');
           leftSpan.classList.add('left-span');
-          // console.log(panels);
-          // console.log(key);
+          console.log(panels);
+          console.log(key);
           leftSpan.append(panels[key]);
           const rightSpan = document.createElement('span');
           rightSpan.classList.add('right-span');
