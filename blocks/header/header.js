@@ -101,12 +101,14 @@ async function fetchPanels() {
       const section = elem.querySelector('.section-metadata');
       console.log(section);
       const key = section.querySelector('.section-metadata > div > div:last-child').textContent;
+      console.log(key);
       section.remove();
       const content = document.createElement('div');
       content.classList.add('panel-content');
       elem.querySelectorAll('div>:not(:first-child)').forEach((item) => {
         content.append(item);
       });
+      console.log(content);
       elem.append(content);
       panelsObj[key] = elem;
     });
